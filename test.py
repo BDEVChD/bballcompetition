@@ -1,13 +1,21 @@
 import requests
 
-url = 'https://v1.basketball.api-sports.io/games'
+# API Endpoint URL
+url = "https://api.sportsdata.io/v3/cbb/scores/json/SchedulesBasic/2024?key=42a665cbaaae4593bfd8b5794d9f17fd"
 
-payload = {}
+# Headers with your API Key
 headers = {
-    'x-rapidapi-host': 'v1.basketball.api-sports.io',
-    'x-rapidapi-key': '3e79c53118cf2ddc23f3c12fd2f7ace1'
+    "Ocp-Apim-Subscription-Key": "42a665cbaaae4593bfd8b5794d9f17fd"
 }
 
-response = requests.request("GET", url, headers=headers, data=payload)
+# Make the GET request
+response = requests.get(url, headers=headers)
 
-print(response.text)
+# Check if the request was successful
+if response.status_code == 200:
+    # Convert the response to JSON
+    games_data = response.json()
+    # Do something with the data
+    print(games_data)
+else:
+    print("Failed to retrieve data:", response.status_code)
