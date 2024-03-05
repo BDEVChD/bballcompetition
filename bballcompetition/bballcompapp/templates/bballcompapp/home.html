@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basketball Competition Home Page</title>
+</head>
+<body>
+    <h1>{{ 'this is a mofuckin basketball game tracker, you gunna see all the stats' }}</h1>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Game Tracker</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        .game {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .game .timezone {
+            font-size: 0.8em;
+            color: #888;
+        }
+        .game .status {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Basketball Game Tracker</h1>
+        <div id="gameTracker">
+            <!-- Game items will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Sample data for demonstration
+            const games = [
+                { time: "2024-03-05T14:00:00Z", timezone: "EDT", status: "Upcoming", teams: ["Team A", "Team B"] },
+                { time: "2024-03-05T16:00:00Z", timezone: "CDT", status: "Live", teams: ["Team C", "Team D"], score: "25-20" },
+                { time: "2024-03-05T18:00:00Z", timezone: "PDT", status: "Upcoming", teams: ["Team E", "Team F"] }
+                // Add more games as needed
+            ];
+
+            const gameTracker = $('#gameTracker');
+
+            games.forEach(game => {
+                const gameItem = $('<div class="game"></div>');
+                gameItem.html(`
+                    <div class="status">${game.status}</div>
+                    <div class="teams">${game.teams[0]} vs ${game.teams[1]}</div>
+                    <div class="timezone">Time: ${new Date(game.time).toLocaleString('en-US', { timeZone: 'UTC' })} ${game.timezone}</div>
+                `);
+                if (game.status === 'Live') {
+                    gameItem.append(`<div class="score">Score: ${game.score}</div>`);
+                }
+                gameTracker.append(gameItem);
+            });
+        });
+    </script>
+</body>
+</html>
+
