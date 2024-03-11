@@ -2,7 +2,7 @@
 
 # # Create your views here.
 # def home(request):
-
+#test 
 #     return render(request, 'bballcompapp/home.html')
 # In views.py of your Django app
 from django.shortcuts import render
