@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,5 +18,104 @@
   {% endfor %}
 </div>
 
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upcoming NCAA Basketball Games</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  #game-list {
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .game {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .team {
+    font-weight: bold;
+  }
+
+  .time {
+    color: #666;
+  }
+
+  .location {
+    color: #888;
+  }
+
+  .game-status {
+    font-size: 12px;
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 20px;
+    color: #fff;
+    margin-left: 10px;
+  }
+
+  .scheduled {
+    background-color: #007bff;
+  }
+
+  .in-progress {
+    background-color: #28a745;
+  }
+
+  .completed {
+    background-color: #6c757d;
+  }
+
+  .game-period {
+    font-size: 12px;
+    color: #888;
+  }
+</style>
+</head>
+<body>
+<div id="game-list">
+  <div class="game">
+    <span class="team">Duke</span> vs <span class="team">UNC</span>
+    <div class="time">March 14, 2024, 8:00 PM ET</div>
+    <div class="location">at Cameron Indoor Stadium</div>
+    <span class="game-status scheduled">Scheduled</span>
+    <div class="game-period">Game Period: Regular Time</div>
+  </div>
+  <div class="game">
+    <span class="team">Kentucky</span> vs <span class="team">Kansas</span>
+    <div class="time">March 15, 2024, 7:30 PM ET</div>
+    <div class="location">at Rupp Arena</div>
+    <span class="game-status in-progress">In Progress</span>
+    <div class="game-period">Game Period: Half Time</div>
+  </div>
+  <div class="game">
+    <span class="team">Michigan</span> vs <span class="team">Michigan State</span>
+    <div class="time">March 16, 2024, 9:00 PM ET</div>
+    <div class="location">at Crisler Center</div>
+    <span class="game-status completed">Completed</span>
+    <div class="game-period">Game Period: Postgame</div>
+  </div>
+</div>
 </body>
 </html>
