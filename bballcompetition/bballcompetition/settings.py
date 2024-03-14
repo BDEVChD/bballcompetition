@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
+    '172.17.0.1'
 ]
 
 
@@ -85,7 +86,7 @@ DATABASES = {
     # }
     'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'bballproj',
+            'NAME': 'bball_project',
             'USER': 'root',
             'PASSWORD': 'bballpass',
             'HOST': 'localhost', 

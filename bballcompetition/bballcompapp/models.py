@@ -11,7 +11,7 @@ class Game(models.Model):
     start_time_zone = models.CharField(max_length=10)
     end_time = models.DateTimeField(null=True, blank=True)
     end_time_zone = models.CharField(max_length=10, null=True, blank=True)
-    current_period = models.IntegerField(null=True, blank=True)
+    current_period = models.CharField(max_length=10, null=True, blank=True)
     home_team_score = models.IntegerField(default=0)
     away_team_score = models.IntegerField(default=0)
 
