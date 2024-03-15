@@ -19,3 +19,8 @@ class GameUpdate(models.Model):
     game = models.ForeignKey(Game, on_delete=models.CASCADE, related_name='updates')
     update_timestamp = models.DateTimeField()
     update_type = models.CharField(max_length=10)
+
+
+class User(models.Model):
+    phone_number = models.CharField(max_length=15, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)

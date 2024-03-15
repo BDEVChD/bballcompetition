@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from datetime import datetime, timedelta
-from yourapp.models import Game
-from twilio.rest import Client
+from bballcompapp.models import Game
+
 
 class Command(BaseCommand):
     help = 'Checks for any upcoming games within the next hour starting from 8 AM'
@@ -17,14 +17,14 @@ class Command(BaseCommand):
 
         # Trigger SMS notifications for each upcoming game
         for game in upcoming_games:
-            self.send_sms_notification(game)
+            print(f"Upcoming game: {game.home_team} vs {game.away_team} at {game.start_time}")
+            # self.send_sms_notification(game)
 
     def send_sms_notification(self, game):
-        # Implement logic to send SMS notification
-        # This will depend on the SMS service provider you're using
+        from twilio.rest import Client
         account_sid = 'AC8f3ca5b6dbbc450456470c549a91ac7f'
         auth_token = 'b9e6e822413a838a3c9d1b3709f46a44'
-        client = Client(account_sid, auth_token)
+      
 
         # Phone number to send the SMS notification to
         to_phone_number = '+18579916807'

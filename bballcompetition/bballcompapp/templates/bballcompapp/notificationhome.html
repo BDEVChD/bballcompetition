@@ -1,0 +1,250 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to NCAA Basketball Tracker</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    .btn {
+      display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        text-align: center;
+        background-color: #007bff; /* Blue color */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .banner {
+        background-color: orange;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px 5px 0 0;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <h1>Welcome to the NCAA Basketball Game Tracker</h1>
+</div>
+  
+<div class="container">
+    <h2>Choose a notification method</h2>
+    <div class="form-group">
+        <button class="btn" id="phoneBtn">Phone Number</button>
+        <button class="btn" id="emailBtn">Email Address</button>
+    </div>
+</div>
+
+<div id="phonePage" class="container" style="display: none;">
+    <h2>Enter Phone Number</h2>
+    <div class="form-group">
+        <input type="text" id="phoneNumberInput" placeholder="Enter Phone Number">
+    </div>
+    <div class="form-group">
+        <button class="btn" id="phoneContinueBtn">Continue</button>
+    </div>
+</div>
+
+<div id="emailPage" class="container" style="display: none;">
+    <h2>Enter Email Address</h2>
+    <div class="form-group">
+        <input type="text" id="emailAddressInput" placeholder="Enter Email Address">
+    </div>
+    <div class="form-group">
+        <button class="btn" id="emailContinueBtn">Continue</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+      $(document).ready(function() {
+        $("#phoneBtn").click(function() {
+            $("#phonePage").show();
+            $("#emailPage").hide();
+            $("#phoneContinueBtn").prop('disabled', true);
+        });
+
+        $("#emailBtn").click(function() {
+            $("#phonePage").hide();
+            $("#emailPage").show();
+            $("#emailContinueBtn").prop('disabled', true);
+        });
+
+        $("#phoneContinueBtn").click(function() {
+            var phoneNumber = $("#phoneNumberInput").val();
+            // Here you can perform any necessary actions with the phone number
+            console.log("Phone Number: " + phoneNumber);
+            // For now, let's just redirect to another page
+            window.location.href = "trackerpage";
+        });
+
+        $("#emailContinueBtn").click(function() {
+            var emailAddress = $("#emailAddressInput").val();
+            // Here you can perform any necessary actions with the email address
+            console.log("Email Address: " + emailAddress);
+            // For now, let's just redirect to another page
+            window.location.href = "trackerpage.html";
+        });
+
+        $("#phoneNumberInput, #emailAddressInput").on('input', function() {
+            var input = $(this).val();
+            if (input.trim() !== "") {
+                $(this).closest('.container').find('.btn').prop('disabled', false);
+            } else {
+                $(this).closest('.container').find('.btn').prop('disabled', true);
+            }
+        });
+    });
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to NCAA Basketball Tracker</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        text-align: center;
+        background-color: #007bff; /* Blue color */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .banner {
+        background-color: orange;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 5px 5px 0 0;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+  <div class="banner">
+    <h1>Welcome to the NCAA Basketball Game Tracker</h1>
+</div>
+  
+<div class="container">
+    <h2>Choose a notification method</h2>
+    <div class="form-group">
+        <button class="btn" id="phoneBtn">Phone Number</button>
+        <button class="btn" id="emailBtn">Email Address</button>
+    </div>
+</div>
+
+<div id="phonePage" class="container" style="display: none;">
+    <form id="phoneForm" action="/trackerpage/" method="post">
+        {% csrf_token %}
+        <h2>Enter Phone Number</h2>
+        <div class="form-group">
+            <input type="text" id="phoneNumberInput" name="phone_number" placeholder="Enter Phone Number">
+        </div>
+        <div class="form-group">
+            <button class="btn" type="submit">Continue</button>
+        </div>
+    </form>
+</div>
+
+<div id="emailPage" class="container" style="display: none;">
+    <form id="emailForm" action="/trackerpage/" method="post">
+        {% csrf_token %}
+        <h2>Enter Email Address</h2>
+        <div class="form-group">
+            <input type="text" id="emailAddressInput" name="email_address" placeholder="Enter Email Address">
+        </div>
+        <div class="form-group">
+            <button class="btn" type="submit">Continue</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("phoneBtn").addEventListener("click", function() {
+        document.getElementById("phonePage").style.display = "block";
+        document.getElementById("emailPage").style.display = "none";
+    });
+
+    document.getElementById("emailBtn").addEventListener("click", function() {
+        document.getElementById("phonePage").style.display = "none";
+        document.getElementById("emailPage").style.display = "block";
+    });
+</script>
+
+</body>
+</html>
