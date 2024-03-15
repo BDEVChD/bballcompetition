@@ -17,11 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from bballcompapp.views import home
-
+from bballcompapp.views import trackerpage
+from bballcompapp.views import notificationhome
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name='home')
-
+    path('trackerpage/', trackerpage, name='trackerpage'),
+    path('', notificationhome, name='notificationhome'), 
 ]
