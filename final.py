@@ -1,6 +1,5 @@
 import requests
 from datetime import datetime
-import pytz
 import pymysql
 
 connection = pymysql.connect(
@@ -10,6 +9,7 @@ connection = pymysql.connect(
     database='bball_project',
     port=32769
 )
+
 
 def insert_team(cursor, team_name):
     sql = "INSERT INTO bballcompapp_team (team_name) VALUES (%s)"
@@ -22,12 +22,6 @@ def insert_game(cursor, home_team_id, away_team_id, start_time, start_time_zone,
     VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
     """
     cursor.execute(sql, (home_team_id, away_team_id, start_time, start_time_zone, end_time, end_time_zone, current_period, home_team_score, away_team_score))
-
-def get_team_id(team_name):
-    sql = "SELECT id FROM bballcompapp_team WHERE team_name = %s"
-    cursor.execute(sql, (team_name,))
-    result = cursor.fetchone()
-    return result['id'] if result else None
 
 def fetch_and_insert_teams(cursor):
     team_mapping_url = "https://api.sportsdata.io/v3/cbb/scores/json/TeamsBasic?key=42a665cbaaae4593bfd8b5794d9f17fd"
