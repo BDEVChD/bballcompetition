@@ -57,12 +57,6 @@ MIDDLEWARE = [
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_HOST = 'smtp.mailgun.org'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mg.fullyaccountable.com'  # Your Mailgun domain
-EMAIL_HOST_PASSWORD = 'key-0c66a7e104c6fc7ec6aefb3b13bd5938' 
-EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'noreply@fullyaccountable.com'  # Your default sender email address
 
 ROOT_URLCONF = 'bballcompetition.urls'
 
